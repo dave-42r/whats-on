@@ -1,4 +1,7 @@
 # What's on - your TV guide for the 21st century
+[What's on - demo site](https://dave-42r.github.io/whats-on/).
+
+## About
 This project is a tech test and will evolve incrementally until it's "ready to be submitted". I'll use this repo to demo how i'm working and my thought process. I normally work on branches then merge into master/main so i'll do that here to demo that, but as there aren't any team members, i'm doing it to demonstrate how I would work on a team. I've started to break down the requirements using github projects, feel free to take a look and ask any questions, I would normally use something like JIRA but for the sake of keeping it simple and speed, i've got for projects. 
 
 
