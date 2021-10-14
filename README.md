@@ -1,4 +1,6 @@
-# Getting Started with Create React App
+# What's on - your TV guide for the 21st century
+This project is a tech test and will evolve incrementally until it's "ready to be submitted". I'll use this repo to demo how i'm working and my thought process. I normally work on branches then merge into master/main so i'll do that here to demo that, but as there aren't any team members, i'm doing it to demonstrate how I would work on a team. I've started to break down the requirements using github projects, feel free to take a look and ask any questions, I would normally use something like JIRA but for the sake of keeping it simple and speed, i've got for projects. 
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -38,10 +40,3 @@ If you aren’t satisfied with the build tool and configuration choices, you can
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-# whats-on
