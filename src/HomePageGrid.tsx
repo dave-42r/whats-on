@@ -30,8 +30,8 @@ function HomePageGrid() {
             return {
                 x: (i * 2) % 12,
                 y: Math.floor(i / 6) * y,
-                w: w,
-                h: y,
+                w: 2,
+                h: 2,
                 i: i.toString()
             };
         });
