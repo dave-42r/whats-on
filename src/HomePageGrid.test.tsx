@@ -9,6 +9,12 @@ test('Renders Grid title, Last Added Shows', () => {
     expect(firstGridItem).toBeInTheDocument();
 });
 
+test('Renders Grid of Episodes, should contain a card with the title Good Morning Britain', async () => {
+    render(<HomePageGrid grid-data={ExampleData} />);
+    const card = screen.getByTestId('0');
+    expect(card).toHaveTextContent("Good Morning Britain")
+});
+
 test('Renders Grid of Episodes, should contain a card with episode image matching sample data', async () => {
     const {getByAltText} = await render(<HomePageGrid grid-data={ExampleData} />);
     const image = getByAltText('Good Morning Britain cover image');
