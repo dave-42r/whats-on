@@ -27,3 +27,10 @@ test('Renders Grid of Episodes, should contain a card with an episode rating', a
     const rating = within(card).getByText(/rating/i);
     expect(rating).toHaveTextContent("0/10")
 });
+
+test('Renders a card with a link to it\'s own show page', async () => {
+    render(<HomePageGrid grid-data={ExampleData} />);
+    const card = screen.getByTestId('0');
+    const linkToShowPage = within(card).findByText(/<a>/);
+    expect(linkToShowPage).toHaveAttribute("href","");
+});

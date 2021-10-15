@@ -26,7 +26,6 @@ function HomePageGrid() {
     function generateLayout() {
         const p = defaultProps;
         return _.map(sampleData, function (item, i) {
-            let w : number = _.result(p, "w") || Math.ceil(Math.random() * 4);
             let y : number = _.result(p, "y") || Math.ceil(Math.random() * 4) + 1;
             return {
                 x: (i * 2) % 12,
