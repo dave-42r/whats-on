@@ -2,6 +2,7 @@ import { defaultMaxListeners } from 'events';
 import _ from "lodash";
 import { Responsive, WidthProvider } from 'react-grid-layout';
 import sampleData from './exampleData.json';
+import './HomePageGrid.css'
 
 function HomePageGrid() {
      const defaultProps = {
