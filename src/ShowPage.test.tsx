@@ -10,3 +10,35 @@ test('Renders Show Page element with Title placeholder', () => {
     const showPageTitle = screen.getByText(/Title/i);
     expect(showPageTitle).toBeInTheDocument();
 }); 
+
+test('Renders Show Page with Show Info Section', () => {
+    render(
+        <ShowPage />
+    );
+    const showPageTitle = screen.getByText(/show info/i);
+    expect(showPageTitle).toBeInTheDocument();
+});
+
+test('Renders Show Page with Starring Section', () => {
+    render(
+        <ShowPage />
+    );
+    const showPageTitle = screen.getByText(/starring/i);
+    expect(showPageTitle).toBeInTheDocument();
+});
+
+test('Renders Show Page element with rating bar', () => {
+    render(
+        <ShowPage />
+    );
+    
+});
+
+test('Renders Show Page with show overview image', () => {
+    render(
+        <ShowPage ShowData={ExampleData[0]}/>
+    );
+    const showPageTitle = screen.getByText(/Title/i);
+    expect(showPageTitle).toBeInTheDocument();
+});
+
