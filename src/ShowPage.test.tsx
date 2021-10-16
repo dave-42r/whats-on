@@ -9,4 +9,4 @@ test('Renders Show Page element with Title placeholder', () => {
         );
     const showPageTitle = screen.getByText(/Title/i);
     expect(showPageTitle).toBeInTheDocument();
-}); 
+});
