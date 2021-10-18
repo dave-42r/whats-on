@@ -1,3 +1,5 @@
+import ExampleData from './exampleData.json';
+
 export interface ShowInfo{
     StreamedOn: string;
     Schedule: string;
@@ -11,7 +13,7 @@ export interface Actor{
     ProfileLink: string;
 }
 
-export interface ShowPageProps{
+export interface ShowPageDetailProps{
     Title: string;
     Description: string;
     OverviewPictureSrc: string;
@@ -20,13 +22,46 @@ export interface ShowPageProps{
     Starring: Actor[];
 }
 
+interface ShowPage{
+    showId:number
+}
 
-function ShowPage(showPageProps: ShowPageProps) {
+function ShowPage(props : ShowPage){
+
+const thisMorningData = ExampleData.find((exampleData)=> exampleData.id === props.showId);
+
+const showPageDetailProps: ShowPageDetailProps = {
+    Title: thisMorningData.name,
+    Description: thisMorningData.show.summary ?? "",
+    Rating: thisMorningData.show.rating.average ?? 0,
+    OverviewPictureSrc: thisMorningData.show.image?.medium ?? "",
+    ShowInfo: {
+        Genres: thisMorningData.show.genres,
+        Schedule: thisMorningData.show.schedule.days.join(", "),
+        Status: thisMorningData.show.status,
+        StreamedOn: thisMorningData.show.network?.name ?? ""
+    },
+    Starring: [
+        {
+            ActorName:"Test",
+            CharactorName:"Test",
+            ProfileLink:""
+        }
+    ]
+
+};
+
+    return (
+        <ShowPageDetail {...showPageDetailProps} />
+    );
+}
+
+function ShowPageDetail(showPageDetailProps: ShowPageDetailProps) {
     return (
         <div className="ShowPage container">
             <div className="row">
                 <div id="title" className="md-12"><h1>Title</h1>
-                    <p>{showPageProps.Title}</p></div>
+                    <p>{showPageDetailProps.Title}</p></div>
             </div>
 
             <div className="row">
@@ -38,29 +73,29 @@ function ShowPage(showPageProps: ShowPageProps) {
                     </div>                    
                     <div className="row">
                         <div className="md-12">
-                            <span>Streamed On {showPageProps.ShowInfo.StreamedOn}</span>
+                            <span>Streamed On {showPageDetailProps.ShowInfo.StreamedOn}</span>
                         </div>
                     </div>
                     <div className="row">
                         <div className="md-12">
-                            <span>Schedule {showPageProps.ShowInfo.Schedule}</span>
+                            <span>Schedule {showPageDetailProps.ShowInfo.Schedule}</span>
                         </div>
                     </div>
                     <div className="row">
                         <div className="md-12">
-                            <span>Status {showPageProps.ShowInfo.Status}</span>
+                            <span>Status {showPageDetailProps.ShowInfo.Status}</span>
                         </div>
                     </div>
                     <div className="row">
                         <div className="md-12">
-                            <span>Genres {showPageProps.ShowInfo.Genres.join(", ")}</span>
+                            <span>Genres {showPageDetailProps.ShowInfo.Genres.join(", ")}</span>
                         </div>
                     </div>                    
                 </div>
                 <div id="starring" className="md-6">
                     <h2>Starring</h2>
                     {
-                        showPageProps.Starring.map(actor=> (
+                        showPageDetailProps.Starring.map(actor=> (
                             <div key={actor.CharactorName} className="row">
                                 <div className="md-12">
                                     <span><img src={actor.ProfileLink} alt="Profile Picture" /> </span>

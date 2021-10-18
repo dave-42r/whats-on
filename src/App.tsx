@@ -8,6 +8,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import ShowPage from './ShowPage';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
               <HomePageGrid />
             </div>
           </Route>
+          <Route path="/show/:showId" component={ShowPage} />
         </Switch>
       </div>
     </Router>
