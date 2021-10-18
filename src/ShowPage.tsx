@@ -11,31 +11,22 @@ export interface Actor{
     ProfileLink: string;
 }
 
-export class ShowPageProps{
-    public Title: string;
-    public Description: string;
-    public OverviewPictureSrc: string;
-    public Rating: number;
-    public ShowInfo: ShowInfo;
-    public Starring: Actor[];
-
-    constructor(Title: string, Description: string, OverviewPictureSrc: string, Rating: number, ShowInfo: ShowInfo, Starring: Actor[]){
-        this.Title = Title;
-        this.Description = Description;
-        this.OverviewPictureSrc = OverviewPictureSrc;
-        this.Rating = Rating;
-        this.ShowInfo = ShowInfo;
-        this.Starring = Starring;
-    }
+export interface ShowPageProps{
+    Title: string;
+    Description: string;
+    OverviewPictureSrc: string;
+    Rating: number;
+    ShowInfo: ShowInfo;
+    Starring: Actor[];
 }
 
 
-function ShowPage(props: ShowPageProps) {
+function ShowPage(showPageProps: ShowPageProps) {
     return (
         <div className="ShowPage container">
             <div className="row">
                 <div id="title" className="md-12"><h1>Title</h1>
-                    <p>{props.Title}</p></div>
+                    <p>{showPageProps.Title}</p></div>
             </div>
 
             <div className="row">
@@ -47,30 +38,30 @@ function ShowPage(props: ShowPageProps) {
                     </div>                    
                     <div className="row">
                         <div className="md-12">
-                            <span>Streamed On {props.ShowInfo.StreamedOn}</span>
+                            <span>Streamed On {showPageProps.ShowInfo.StreamedOn}</span>
                         </div>
                     </div>
                     <div className="row">
                         <div className="md-12">
-                            <span>Schedule {props.ShowInfo.Schedule}</span>
+                            <span>Schedule {showPageProps.ShowInfo.Schedule}</span>
                         </div>
                     </div>
                     <div className="row">
                         <div className="md-12">
-                            <span>Status {props.ShowInfo.Status}</span>
+                            <span>Status {showPageProps.ShowInfo.Status}</span>
                         </div>
                     </div>
                     <div className="row">
                         <div className="md-12">
-                            <span>Genres {props.ShowInfo.Genres.join(", ")}</span>
+                            <span>Genres {showPageProps.ShowInfo.Genres.join(", ")}</span>
                         </div>
                     </div>                    
                 </div>
                 <div id="starring" className="md-6">
                     <h2>Starring</h2>
                     {
-                        props.Starring.map(actor=> (
-                            <div className="row">
+                        showPageProps.Starring.map(actor=> (
+                            <div key={actor.CharactorName} className="row">
                                 <div className="md-12">
                                     <span><img src={actor.ProfileLink} alt="Profile Picture" /> </span>
                                     <span>{actor.ActorName}</span>
