@@ -6,7 +6,8 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  Redirect
 } from "react-router-dom";
 import ShowPage from './ShowPage';
 
@@ -33,10 +34,15 @@ function App() {
               <HomePageGrid />
             
           </Route>
+          <Route exact path="/whats-on">
+            
+              <Redirect to="/" />
+            
+          </Route>
           <Route path="/show/:showId" component={ShowPage} />
            <Route>
-      <div> 404</div>
-    </Route>
+              <div> 404</div>
+          </Route>
         </Switch>
       </div>
     </Router>
