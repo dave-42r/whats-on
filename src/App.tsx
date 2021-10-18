@@ -17,7 +17,7 @@ function App() {
       <div>
 <div className="App">
               <header className="App-header">
-                <Link to="/"><p id="Title">
+                <Link to="/whats-on"><p id="Title">
                   What's on - your TV guide for the 21st century
         </p>
         </Link>
@@ -29,14 +29,14 @@ function App() {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-          <Route exact path="/">
+          <Route exact path="/whats-on">
             
               <HomePageGrid />
             
           </Route>
-          <Route exact path="/whats-on">
+          <Route exact path="/">
             
-              <Redirect to="/" />
+              <Redirect to="/whats-on" />
             
           </Route>
           <Route path="/show/:showId" component={ShowPage} />
