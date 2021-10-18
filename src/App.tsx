@@ -8,17 +8,13 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import ShowPage from './ShowPage';
 
 function App() {
   return (
     <Router>
       <div>
-
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
-        <Switch>
-          <Route path="/">
-            <div className="App">
+<div className="App">
               <header className="App-header">
                 <Link to="/"><p id="Title">
                   What's on - your TV guide for the 21st century
@@ -28,9 +24,19 @@ function App() {
               <p id="TagLine">
                 TV Show and web series database. Create personalised schedules. Episode guide, cast, crew and character information.
         </p>
+        </div>
+        {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+        <Switch>
+          <Route exact path="/">
+            
               <HomePageGrid />
-            </div>
+            
           </Route>
+          <Route path="/show/:showId" component={ShowPage} />
+           <Route>
+      <div> 404</div>
+    </Route>
         </Switch>
       </div>
     </Router>

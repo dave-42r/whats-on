@@ -18,7 +18,7 @@ function HomePageGrid() {
         return _.map(_.range(sampleData.length), function (i) {
             return (
                     <div key={i} data-grid={layout[i]} data-testid={i.toString()}>
-                        <NavLink to={sampleData[i].show._links.self.href}>
+                        <NavLink to={`/show/${sampleData[i].id}`}>
                             <img alt={sampleData[i].show.name + " cover image"} src={sampleData[i].show.image?.medium} />
                         </NavLink>
                         <div className="text">Rating:{sampleData[i].show.rating.average ? sampleData[i].show.rating.average + "/10" : "0/10" }</div>
